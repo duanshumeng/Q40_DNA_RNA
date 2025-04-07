@@ -1,2 +1,2 @@
-# Q40_DNA_RNA
-The scripts related to comparing "Empowering Precise Detection of Rare Biological Events with Sequencing Data of High Base Quality (Q40)"
+# Q40 DNA and RNA
+The scripts related to comparing "Higher Q score (Q40) Sequencing Technology Enhances Accuracy and Cost-Efficiency in Genomic Events Detection"
