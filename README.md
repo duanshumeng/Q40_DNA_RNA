@@ -26,6 +26,7 @@ seqtk (v1.4-r122)
 BWA (v0.7.17-r1188)
 HISAT2 (v2.7.10)
 SAMtools
+
 **3.3. Variant Calling (DNA Level)**
 
 GATK (v4.4.0, including Mutect2, HaplotypeCaller, FilterMutectCalls)
@@ -34,21 +35,24 @@ hap.py
 som.py (for somatic variant evaluation)
 VBT (for Mendelian consistency analysis)
 BCFtools
+
 **3.4. Transcriptome Analysis (RNA Level)**
 
 StringTie (v2.1.7, for transcript assembly & quantification)
 limma (v3.54.0)
 edgeR (v3.40.2, for differential expression analysis)
+
 **3.5. Quality Assessment & Visualization**
 
 Qualimap (v2.0.0)
 MultiQC (v1.18)
+
 **3.6. R Bioinformatics Packages**
 
 ASCAT (for copy number analysis)
 limma, edgeR (listed above in 3.4)
 ggplot2, ggunchained, etc. (for plotting & visualization)
-###4. Dependent Key Databases/Reference Files
+### 4. Dependent Key Databases/Reference Files
 
 Reference Genome: GRCh38.d1.vd1.fa (hg38)
 Gene Annotation File: Homo_sapiens.GRCh38.109.gtf
