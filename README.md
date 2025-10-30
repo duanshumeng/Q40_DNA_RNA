@@ -17,11 +17,15 @@ Bash/Shell
 ### 3. Bioinformatics Core Tools & Software Packages
 
 **3.1. Data Quality Control & Preprocessing**
-
+```
+#script: Analysis scripts/fastQC.smk, Analysis scripts/fastq-downsample.sh
 fastp (v0.19.6)
 fastqc (v0.11.5)
 seqtk (v1.4-r122)
-3.2. Sequence Alignment
+```
+
+
+**3.2. Sequence Alignment**
 
 BWA (v0.7.17-r1188)
 HISAT2 (v2.7.10)
