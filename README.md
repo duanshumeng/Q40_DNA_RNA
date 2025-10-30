@@ -29,6 +29,7 @@ Analysis scripts/bam-downsample.sh
 #BWA from sentieon (v202112.05),HISAT2 (v2.7.10),SAMtools (v1.18)
 #DNA alignment
 Analysis scripts/wes-fastq2bam.wdl
+
 #RNA alignment
 Analysis scripts/rnaseq-fastq2bam.sh
 ```
