@@ -18,27 +18,26 @@ Bash/Shell
 
 **3.1. Data Quality Control & Preprocessing**
 ```
-#script: Analysis scripts/fastQC.smk, Analysis scripts/fastq-downsample.sh
-fastp (v0.19.6)
-fastqc (v0.11.5)
-seqtk (v1.4-r122)
+#fastp (v0.19.6),fastqc (v0.11.5),seqtk (v1.4-r122)
+Analysis scripts/fastQC.smk
+Analysis scripts/fastq-downsample.sh
+Analysis scripts/bam-downsample.sh
 ```
 
-
 **3.2. Sequence Alignment**
-
-BWA (v0.7.17-r1188)
-HISAT2 (v2.7.10)
-SAMtools
+```
+#BWA from sentieon (v202112.05),HISAT2 (v2.7.10),SAMtools (v1.18)
+#DNA alignment
+Analysis scripts/wes-fastq2bam.wdl
+#RNA alignment
+Analysis scripts/rnaseq-fastq2bam.sh
+```
 
 **3.3. Variant Calling (DNA Level)**
+#GATK (v4.4.0, including Mutect2, HaplotypeCaller),TNseq from sentieon (v202112.05) which can be replaced by Mutect2, ASCAT (v3.1.2), hap.py (for germline variant evaluation), som.py (for somatic variant evaluation), VBT (for Mendelian consistency analysis), BCFtools(v1.17)
+```
 
-GATK (v4.4.0, including Mutect2, HaplotypeCaller, FilterMutectCalls)
-ASCAT (v3.1.2)
-hap.py
-som.py (for somatic variant evaluation)
-VBT (for Mendelian consistency analysis)
-BCFtools
+```
 
 **3.4. Transcriptome Analysis (RNA Level)**
 
@@ -47,9 +46,13 @@ limma (v3.54.0)
 edgeR (v3.40.2, for differential expression analysis)
 
 **3.5. Quality Assessment & Visualization**
+```
+#Qualimap (v2.0.0),MultiQC (v1.18)
+#Data quality Assessment
 
-Qualimap (v2.0.0)
-MultiQC (v1.18)
+#Data performance Assessment
+
+```
 
 **3.6. R Bioinformatics Packages**
 
