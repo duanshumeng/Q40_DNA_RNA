@@ -76,6 +76,8 @@ R (v4.2+),ggplot2, ggunchained, etc. (for plotting & visualization)
 ### 4. Dependent Key Databases/Reference Files
 
 Reference Genome: GRCh38.d1.vd1.fa (hg38)
+
 Gene Annotation File: Homo_sapiens.GRCh38.109.gtf
+
 High-Confidence Variant Reference Sets: (e.g., standard variant sets provided by the NIST, Quartet, and SEQC2 projects)
 
