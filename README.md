@@ -71,8 +71,7 @@ Visualization scripts/Fig5.3.MAQC2-RNAseq.R
 
 **3.6. R Bioinformatics Packages**
 
-ASCAT (v3.1.2),limma (v3.54.0), edgeR (v3.40.2)
-R (v4.2+),ggplot2, ggunchained, etc. (for plotting & visualization)
+R (v4.2+),ASCAT (v3.1.2),limma (v3.54.0), edgeR (v3.40.2), ggplot2, ggunchained, etc. (for plotting & visualization)
 ### 4. Dependent Key Databases/Reference Files
 
 Reference Genome: GRCh38.d1.vd1.fa (hg38)
