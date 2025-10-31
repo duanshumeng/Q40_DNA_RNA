@@ -58,12 +58,15 @@ Analysis scripts/gene-quantification.sh
 ```
 
 **3.5. Quality Assessment & Visualization**
+
+**Data quality Assessment**
 ```
 #Qualimap (v2.0.0),MultiQC (v1.18)
-#Data quality Assessment
 Visualization scripts/Fig2-data_quality.R
-
-#Data performance Assessment,Python (v3.8+),R (v4.2+)
+```
+**Data performance Assessment**
+```
+#Python (v3.8+),R (v4.2+)
 
 #SNR (Signal-to-Noise Ratio)
 Visualization scripts/Fig5.2.RNA_Quartet.R
