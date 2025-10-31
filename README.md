@@ -63,17 +63,42 @@ Analysis scripts/gene-quantification.sh
 #Data quality Assessment
 Visualization scripts/Fig2-data_quality.R
 
-#Data performance Assessment
-Visualization scripts/Fig3-4-WES_combine.R
-Visualization scripts/Fig5-RNAseq_combine.R
-Visualization scripts/Fig5.1.ERCC_RNAseq.V2.R
+#Data performance Assessment,Python (v3.8+),R (v4.2+)
+
+#SNR (Signal-to-Noise Ratio)
 Visualization scripts/Fig5.2.RNA_Quartet.R
 Visualization scripts/Fig5.3.MAQC2-RNAseq.R
+Visualization scripts/Fig5-RNAseq_combine.R
+Visualization scripts/Fig5-RNAseq_combine.R
+
+#PCC (Pearson correlation coefficient)
+Visualization scripts/Fig5.2.RNA_Quartet.R
+Visualization scripts/Fig5.3.MAQC2-RNAseq.R
+Analysis scripts/VAF-PCC.py
+ 
+#F1 score and Reproducibility
+Analysis scripts/HCC1395_F1_and_Reproducibility.py
+Analysis scripts/Quartet_F1_and_Reproducibility.py
+Analysis scripts/NIST_F1_and_Reproducibility.py
+Visualization scripts/Fig3-4-WES_combine.R
+
+#MCC (Matthews Correlation Coefficient)
+Visualization scripts/Fig5.2.RNA_Quartet.R
+Visualization scripts/Fig5.3.MAQC2-RNAseq.R
+
+#LODR (Limit of Detection of Ratio) and AUC (Area Under the Curve)
+Visualization scripts/Fig5.1.ERCC_RNAseq.V2.R
+
+#MCR (Mendelian Consistent Rate)
+Analysis scripts/Quartet-MCR.sh
+Analysis scripts/merge_two_family_with_genotype.py
+
 ```
 
 **3.6. R Bioinformatics Packages**
 
 R (v4.2+),ASCAT (v3.1.2),limma (v3.54.0), edgeR (v3.40.2), ggplot2, ggunchained, etc. (for plotting & visualization)
+
 ### 4. Dependent Key Databases/Reference Files
 
 Reference Genome: GRCh38.d1.vd1.fa (hg38)
