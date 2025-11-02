@@ -72,7 +72,6 @@ Visualization scripts/Fig2-data_quality.R
 Visualization scripts/Fig5.2.RNA_Quartet.R
 Visualization scripts/Fig5.3.MAQC2-RNAseq.R
 Visualization scripts/Fig5-RNAseq_combine.R
-Visualization scripts/Fig5-RNAseq_combine.R
 
 #PCC (Pearson correlation coefficient)
 Visualization scripts/Fig5.2.RNA_Quartet.R
