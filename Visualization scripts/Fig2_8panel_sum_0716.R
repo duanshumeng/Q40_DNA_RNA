@@ -1,7 +1,7 @@
 # 2025-0716
 # GUO
 # Fig2 a-h
-setwd('/Users/duanshumeng/生物信息/PGx_lab/HCC1395/ElementVSIllumina/文章/Scripts/Visualization scripts')
+setwd('/Users/duanshumeng/PGx_lab/HCC1395/ElementVSIllumina/Scripts/Visualization scripts')
 #setwd('/Users/duanshumeng/Bioinformatics/PGx_lab/HCC1395/ElementVSIllumina/Paper/Scripts/Visualization scripts')
 fig2_df <- read.table("Fig2_8panel_summary_0716.csv")
 head(fig2_df)
@@ -53,7 +53,7 @@ topptx(p, "/Users/xr/Desktop/Quartet_as/new/Fig6_rain_box_0711.pptx", width = 7.
 topptx(p, "/Users/xr/Desktop/00_PhD/05_Q40/plot/Fig2a-h_box_0716.pptx", width = 7, height = 6)
 ??stat_compare_means
 
-source("~/生物信息/PGx_lab/HCC1395/ElementVSIllumina/文章/Scripts/Visualization scripts/Statistics_analysis.R")
+source("~/PGx_lab/HCC1395/ElementVSIllumina/Scripts/Visualization scripts/Statistics_analysis.R")
 # Load necessary packages
 
 # Assume your dataframe is named df
