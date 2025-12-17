@@ -111,15 +111,21 @@ High-Confidence Variant Reference Sets: (e.g., reference variant sets provided b
 **DNA reference dataset**
 
 **NIST RM8398**: HG001_GRCh38_1_22_v4.2.1 (https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/release/NA12878_HG001/NISTv4.2.1/GRCh38/)
+
 **Quartet**:  DNA reference datasets v20210909 (https://chinese-quartet.org/#/reference-datasets/download)
+
 **SEQC2**: https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/seqc/Somatic_Mutation_WG/release/latest/
 
 **RNA reference datasets**
+
 **Quartet**: RNA reference datasets v20210909 (https://chinese-quartet.org/#/reference-datasets/download)
+
 **MAQC**: MAQC_TAQ_16r1044_ANA_gene_20150804 （https://github.com/duanshumeng/Q40_DNA_RNA/tree/main/Reference%20datasets/MAQC）
+
 **ERCC**: https://github.com/munrosa/erccdashboard
 
 **Exome Target Region**
+
 https://github.com/duanshumeng/Q40_DNA_RNA/tree/main/Reference%20datasets
 
 
