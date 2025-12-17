@@ -115,6 +115,7 @@ High-Confidence Variant Reference Sets: (e.g., reference variant sets provided b
 **Quartet**: DNA reference datasets v20210909 (https://chinese-quartet.org/#/reference-datasets/download)
 
 **SEQC2**: high-confidence_sSNV/Indel_in_HC_regions_v1.2.1 
+
 （https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/seqc/Somatic_Mutation_WG/release/latest/）
 
 **RNA reference datasets**
