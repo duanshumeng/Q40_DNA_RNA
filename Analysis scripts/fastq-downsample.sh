@@ -11,7 +11,7 @@ echo "seqtk has beed finished..."
 
 #RNAseq fastq to 10G
 cd /cpfs01/projects-HDD/cfff-e44ef5cf7aa5_HDD/dsm_23110700129/HCC1395_DNA/Elemenet.vs.Illumina/Fastq/RNAseq/Fastp
-for i in `ls *.clean.fastq.gz`
+for i in `ls *.fastq.gz`
 do 
 echo  $i
 smp=$i
