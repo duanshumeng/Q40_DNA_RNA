@@ -17,7 +17,7 @@ R (v4.2+)
 Bash/Shell
 ### 3. Bioinformatics Core Tools & Software Packages
 
-**3.1. Data Quality Control & Preprocessing**
+**3.1. Data Quality Control & Downsampling**
 ```
 #fastp (v0.19.6),fastqc (v0.11.5),seqtk (v1.4-r122)
 Analysis scripts/fastQC.smk
