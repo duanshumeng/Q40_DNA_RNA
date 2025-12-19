@@ -108,7 +108,8 @@ Reference Genome: GRCh38.d1.vd1.fa (hg38)
 Gene Annotation File: Homo_sapiens.GRCh38.109.gtf
 
 High-Confidence Variant Reference Sets: (e.g., reference variant sets provided by the NIST, Quartet, and SEQC2 projects)
-**DNA reference dataset**
+
+**4.1DNA reference dataset**
 
 **NIST RM8398**: HG001_GRCh38_1_22_v4.2.1 https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/release/NA12878_HG001/NISTv4.2.1/GRCh38/
 
@@ -118,7 +119,7 @@ High-Confidence Variant Reference Sets: (e.g., reference variant sets provided b
 
 https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/seqc/Somatic_Mutation_WG/release/latest/
 
-**RNA reference datasets**
+**4.2 RNA reference datasets**
 
 **Quartet**: RNA reference datasets v20210909 https://chinese-quartet.org/#/reference-datasets/download
 
@@ -126,7 +127,7 @@ https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/seqc/Somatic_Mutation_WG/rel
 
 **ERCC**: latest version https://github.com/munrosa/erccdashboard
 
-**Exome Target Region**
+**4.3 Exome Target Region**
 
 https://github.com/duanshumeng/Q40_DNA_RNA/tree/main/Reference%20datasets
 
