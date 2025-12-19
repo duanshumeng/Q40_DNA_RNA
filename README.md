@@ -125,7 +125,9 @@ https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/seqc/Somatic_Mutation_WG/rel
 
 **MAQC**: MAQC_TAQ_16r1044_ANA_gene_20150804 https://github.com/duanshumeng/Q40_DNA_RNA/tree/main/Reference%20datasets/MAQC
 
-**ERCC**: latest version https://github.com/munrosa/erccdashboard
+**ERCC**: SRM2374_Sequence_v1 https://tsapps.nist.gov/srmext/certificates/documents/SRM2374_Sequence_v1.FASTA https://tsapps.nist.gov/srmext/certificates/documents/SRM2374_ambiguities_resolved_v1.GTF
+Analysis pipeline https://github.com/munrosa/erccdashboard
+
 
 **4.3 Exome Target Region**
 
