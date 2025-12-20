@@ -1,5 +1,5 @@
 library(ggunchained)
-source('/Users/duanshumeng/生物信息/PGx_lab/HCC1395/Quartet_Multiomics_Ratio_Code/utils/theme_nature.r')
+source('/Users/duanshumeng/PGx_lab/HCC1395/Quartet_Multiomics_Ratio_Code/utils/theme_nature.r')
 colors = c('#4472CA','#E69F00')
 names(colors) <- c('Q40','Q30')
 setwd('/Users/duanshumeng/生物信息/PGx_lab/HCC1395/ElementVSIllumina/Data_quality')
