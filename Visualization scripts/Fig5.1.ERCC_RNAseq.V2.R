@@ -1,6 +1,6 @@
 library(plyr)
 
-setwd('/Users/duanshumeng/生物信息/PGx_lab/HCC1395/ElementVSIllumina/RNAseq/ERCC_RNAseq')
+setwd('/Users/duanshumeng/PGx_lab/HCC1395/ElementVSIllumina/RNAseq/ERCC_RNAseq')
 load("ELE.M8D6.count.M8.D6.RData")
 load("ILM.M8D6.count.M8.D6.RData")
 #Count----
