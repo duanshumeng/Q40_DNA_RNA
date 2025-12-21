@@ -1,9 +1,9 @@
-setwd("/Users/duanshumeng/生物信息/PGx_lab/HCC1395/ElementVSIllumina/RNAseq")
+setwd("/Users/duanshumeng/PGx_lab/HCC1395/ElementVSIllumina/RNAseq")
 source("./quartet-rseqc-report/exp2qcdt/R/exp2qcdt.R")
 source("./quartet-rseqc-report/exp2qcdt/R/config.R")
 source("./quartet-rseqc-report/exp2qcdt/R/multiple_group_output.R")
 source("./quartet-rseqc-report/exp2qcdt/R/one_group_output.R")
-source('/Users/duanshumeng/生物信息/PGx_lab/HCC1395/Quartet_Multiomics_Ratio_Code/utils/theme_nature.r')
+source('/Users/duanshumeng/PGx_lab/HCC1395/Quartet_Multiomics_Ratio_Code/utils/theme_nature.r')
 library(dplyr)
 library(stringr)
 library(data.table)
@@ -21,10 +21,10 @@ library(plyr)
 colors = c('#4472CA','#E69F00')
 names(colors) <- c('Q40','Q30')
 #Differentially Expression-------------
-ele_expr <- read.table('/Users/duanshumeng/生物信息/PGx_lab/HCC1395/ElementVSIllumina/RNAseq/ELE/performance_assessment/logfc_cor_ref_test.txt',
+ele_expr <- read.table('/Users/duanshumeng/PGx_lab/HCC1395/ElementVSIllumina/RNAseq/ELE/performance_assessment/logfc_cor_ref_test.txt',
                        header = TRUE)
 
-ilm_expr <- read.table('/Users/duanshumeng/生物信息/PGx_lab/HCC1395/ElementVSIllumina/RNAseq/ILM/performance_assessment/logfc_cor_ref_test.txt',
+ilm_expr <- read.table('/Users/duanshumeng/PGx_lab/HCC1395/ElementVSIllumina/RNAseq/ILM/performance_assessment/logfc_cor_ref_test.txt',
                        header = TRUE)
 
 breaks <- c(0, 0.99, 1.99,2.99,3.99, 4.99, 5.99,10)
@@ -424,7 +424,6 @@ get_fit.plot <- function(data){
     labs(x = "M8.vs.D6 (Log2FC)", y = "T2.vs.D6 (Log2FC)", title = paste0(''))
   
   
-  # 使用 predict() 函数和拟合模型生成预测的 y 值
   predicted_y.t1.q30 <- predict(fit.t1.q30, newdata = data.frame(x = data$x.Q30))
   predicted_y.t1.q40 <- predict(fit.t1.q40, newdata = data.frame(x = data$x.Q40))
   
