@@ -11,7 +11,7 @@ library(stringr)
 library(ggpattern)
 library(gg.gap)
 
-source('~/生物信息/PGx_lab/HCC1395/ElementVSIllumina/文章/Scripts/Visualization scripts/Statistics_analysis.R')
+source('~/PGx_lab/HCC1395/ElementVSIllumina/文章/Scripts/Visualization scripts/Statistics_analysis.R')
 #colors = c('#3783BB','#91569F','#C94741')
 #names(colors) <- c('Q30','Q35','Q40')
 
@@ -62,7 +62,7 @@ my_theme <- theme_bw()+
     legend.title = element_text(face = "bold",color = "black"),
     legend.text = element_text(color = "black")
   )
-setwd('/Users/duanshumeng/生物信息/PGx_lab/HCC1395/ElementVSIllumina/Data_performance_V2/RNAseq/')
+setwd('/Users/duanshumeng/PGx_lab/HCC1395/ElementVSIllumina/Data_performance_V2/RNAseq/')
 
 load('MAQC/MAQC.rnaseq.RData')
 load('Quartet/Quartet.rnaseq.RData')
@@ -426,14 +426,13 @@ ggsave("Fig.rna.sup.pdf",rna_extend.p,width=8.15*1.5, height=5.7*1.5,dpi = 300)
 ggsave("Fig.rna.sup.tiff",rna_extend.p,width=8.15, height=5.7*1.5,dpi = 300)
 
 
-#所有的指标汇总------
 ## WES---
-wes_qc_index <- read.csv('/Users/duanshumeng/生物信息/PGx_lab/HCC1395/ElementVSIllumina/Data_quality/WES.QC.index.summary.csv')
-rnaseq_qc_index <- read.csv('/Users/duanshumeng/生物信息/PGx_lab/HCC1395/ElementVSIllumina/Data_quality/RNAseq.QC.index.summary.csv')
+wes_qc_index <- read.csv('/Users/duanshumeng/PGx_lab/HCC1395/ElementVSIllumina/Data_quality/WES.QC.index.summary.csv')
+rnaseq_qc_index <- read.csv('/Users/duanshumeng/PGx_lab/HCC1395/ElementVSIllumina/Data_quality/RNAseq.QC.index.summary.csv')
 
-wes_index <- read.csv('/Users/duanshumeng/生物信息/PGx_lab/HCC1395/ElementVSIllumina/Data_performance/WES.index.summary.csv')
-cnv_index <- read.csv('/Users/duanshumeng/生物信息/PGx_lab/HCC1395/ElementVSIllumina/Data_performance/CNV.index.summary.csv')
-rnaseq_index <- read.csv('/Users/duanshumeng/生物信息/PGx_lab/HCC1395/ElementVSIllumina/Data_performance_V2/RNAseq/RNAseq_index_summary.csv')
+wes_index <- read.csv('/Users/duanshumeng/PGx_lab/HCC1395/ElementVSIllumina/Data_performance/WES.index.summary.csv')
+cnv_index <- read.csv('/Users/duanshumeng/PGx_lab/HCC1395/ElementVSIllumina/Data_performance/CNV.index.summary.csv')
+rnaseq_index <- read.csv('/Users/duanshumeng/PGx_lab/HCC1395/ElementVSIllumina/Data_performance_V2/RNAseq/RNAseq_index_summary.csv')
 cnv_index$Sample <- 'HCC1395/BL'
 colnames(cnv_index)[4]='cnPCC'
 wes_index <- merge(wes_index,cnv_index,by=c('Quality','Sample'),all=TRUE)
