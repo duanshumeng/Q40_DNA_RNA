@@ -3,7 +3,6 @@ library(tidyr)
 #Statistics analysis for All Data Quality---------
 
 calculate_unpaired_cohens_d <- function(q30_values, q40_values) {
-  # 计算均值和标准差
   mean_q30 <- mean(q30_values, na.rm = TRUE)
   mean_q40 <- mean(q40_values, na.rm = TRUE)
   
@@ -13,21 +12,16 @@ calculate_unpaired_cohens_d <- function(q30_values, q40_values) {
   n1 <- length(q30_values)
   n2 <- length(q40_values)
   
-  # 计算合并标准差（pooled standard deviation）
+  # pooled standard deviation）
   pooled_sd <- sqrt(((n1 - 1) * sd_q30^2 + (n2 - 1) * sd_q40^2) / (n1 + n2 - 2))
   
-  # Cohen's d 计算公式
+  # Cohen's d 
   cohens_d <- (mean_q40-mean_q30) / pooled_sd
   
-  # 计算置信区间（使用t分布）
   if (n1 >= 2 && n2 >= 2 && pooled_sd > 0) {
-    # 标准误差
     se_d <- sqrt(1/n1 + 1/n2)
     
-    # t临界值（95% CI）
     t_critical <- qt(0.975, df = n1 + n2 - 2)
-    
-    # 置信区间
     ci_lower <- cohens_d - t_critical * se_d
     ci_upper <- cohens_d + t_critical * se_d
   } else {
@@ -52,29 +46,24 @@ calculate_unpaired_cohens_d <- function(q30_values, q40_values) {
 
 
 get_test_type_QC <- function(df) {
-  # 定义内部函数：计算配对Cohen's d效应量
   calculate_paired_cohens_d <- function(q30_values, q40_values) {
-    # 计算配对差值
+
     differences <- q40_values - q30_values
-    
-    # 计算均值差和标准差
+
     mean_diff <- mean(differences, na.rm = TRUE)
     sd_diff <- sd(differences, na.rm = TRUE)
-    
-    # Cohen's d（配对版本）
+
     if (!is.na(sd_diff) && sd_diff > 0) {
       cohens_d <- mean_diff / sd_diff
     } else {
       cohens_d <- NA
     }
-    
-    # 计算置信区间（使用t分布）
+
     n <- length(differences)
     if (n >= 2 && !is.na(sd_diff) && sd_diff > 0 && !is.na(cohens_d)) {
-      # 标准误差
+
       se_d <- sqrt((1/n) + (cohens_d^2)/(2*n))
-      
-      # t临界值（95% CI）
+
       t_critical <- qt(0.975, df = n-1)
       
       ci_lower <- cohens_d - t_critical * se_d
@@ -129,7 +118,6 @@ get_test_type_QC <- function(df) {
       next
     }
     
-    # 计算Q30和Q40各自的均值和标准差
     mean_Q30 <- mean(metric_data_wide$Q30, na.rm = TRUE)
     sd_Q30 <- sd(metric_data_wide$Q30, na.rm = TRUE)
     mean_Q40 <- mean(metric_data_wide$Q40, na.rm = TRUE)
@@ -137,26 +125,21 @@ get_test_type_QC <- function(df) {
     
     cat("  Q30: Mean =", round(mean_Q30, 3), "SD =", round(sd_Q30, 3), "\n")
     cat("  Q40: Mean =", round(mean_Q40, 3), "SD =", round(sd_Q40, 3), "\n")
-    
-    # 计算配对Cohen's d效应量
+
     effect_size <- calculate_paired_cohens_d(metric_data_wide$Q30, metric_data_wide$Q40)
-    
-    # 计算差值（用于正态性检验）
+
     differences <- metric_data_wide$Q40 - metric_data_wide$Q30
-    
-    # 初始化变量
+
     shapiro_p <- NA
     shapiro_note <- "Not tested"
     shapiro_result <- "Not tested"
-    
-    # 1. 正态性检验
+
     if (length(differences) < 3) {
       cat("  Sample size too small for Shapiro-Wilk test (n < 3)\n")
       shapiro_p <- NA
       shapiro_note <- "Not tested (n<3)"
       shapiro_result <- "Not tested (n<3)"
       
-      # 样本量太小，直接使用Wilcoxon检验
       cat("  Using Wilcoxon signed-rank test\n")
       test_result <- tryCatch({
         wilcox.test(metric_data_wide$Q40, metric_data_wide$Q30,
@@ -175,14 +158,13 @@ get_test_type_QC <- function(df) {
       p_value <- test_result$p.value
       
     } else {
-      # 检查差值是否全部相同
       if (length(unique(differences)) == 1) {
         cat("  All differences are identical, skipping Shapiro-Wilk test\n")
         shapiro_p <- NA
         shapiro_note <- "Not tested (all diffs identical)"
         shapiro_result <- "Not tested (all diffs identical)"
       } else {
-        # Shapiro-Wilk正态性检验
+        # Shapiro-Wilk
         shapiro_test <- tryCatch({
           shapiro.test(differences)
         }, error = function(e) {
@@ -203,7 +185,6 @@ get_test_type_QC <- function(df) {
         }
       }
       
-      # 2. 根据正态性检验结果选择检验方法
       if (is.na(shapiro_p) || shapiro_p > 0.01) {
         cat("  Using paired t-test\n")
         test_result <- tryCatch({
@@ -240,8 +221,7 @@ get_test_type_QC <- function(df) {
         p_value <- test_result$p.value
       }
     }
-    
-    # 确定效应量大小分类
+
     if (!is.na(effect_size$cohens_d)) {
       effect_size_magnitude <- case_when(
         abs(effect_size$cohens_d) < 0.2 ~ "Negligible",
@@ -253,15 +233,13 @@ get_test_type_QC <- function(df) {
       effect_size_magnitude <- "Not calculated"
     }
     
-    # 确定显著性标记
     significance <- case_when(
       p_value < 0.001 ~ "***",
       p_value < 0.01 ~ "**",
       p_value < 0.05 ~ "*",
       TRUE ~ "ns"
     )
-    
-    # 格式化输出字符串
+
     mean_Q30_str <- sprintf("%.3f ± %.3f", mean_Q30, sd_Q30)
     mean_Q40_str <- sprintf("%.3f ± %.3f", mean_Q40, sd_Q40)
     mean_diff_CI <- sprintf("%.3f ± %.3f", effect_size$mean_diff, effect_size$sd_diff)
@@ -272,8 +250,7 @@ get_test_type_QC <- function(df) {
     } else {
       cohens_d_CI <- sprintf("%.3f [NA, NA]", effect_size$cohens_d)
     }
-    
-    # 存储结果 - 按照你提供的参考格式
+
     results_list[[metric]] <- data.frame(
       Test = test_method,
       Shapiro_p = shapiro_p,
@@ -301,7 +278,6 @@ get_test_type_QC <- function(df) {
       stringsAsFactors = FALSE
     )
     
-    # 打印简要结果
     cat("  Test result: p =", format.pval(p_value, digits = 3), 
         " (", significance, ")\n", sep = "")
     if (!is.na(effect_size$cohens_d)) {
@@ -321,10 +297,8 @@ get_test_type_QC <- function(df) {
   results_df <- do.call(rbind, results_list)
   rownames(results_df) <- NULL
   
-  # 添加Metric列作为第一列
   results_df <- cbind(Metric = names(results_list), results_df)
-  
-  # 重新排列列顺序，将字符串列放在后面
+
   results_df <- results_df %>%
     select(Metric, Test, Shapiro_p, Shapiro_note, Test_statistic, df, p_value,
            Mean_Q30, SD_Q30, Mean_Q40, SD_Q40, Mean_diff, SD_diff, Cohens_d,
@@ -335,7 +309,6 @@ get_test_type_QC <- function(df) {
   cat("\n\n=== Complete Results ===\n")
   print(results_df)
   
-  # 打印简洁摘要
   cat("\n\n=== Summary Table ===\n")
   print(results_df[, c("Metric", "Test", "Shapiro_result", "p_value", 
                        "Significance", "Effect_size_magnitude", 
