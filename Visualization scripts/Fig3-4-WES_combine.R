@@ -1,9 +1,9 @@
 rm(list = ls())
-setwd('/Users/duanshumeng/生物信息/PGx_lab/HCC1395/ElementVSIllumina/Data_performance')
-source('/Users/duanshumeng/生物信息/PGx_lab/HCC1395/Quartet_Multiomics_Ratio_Code/utils/theme_nature.r')
+setwd('/Users/duanshumeng/PGx_lab/HCC1395/ElementVSIllumina/Data_performance')
+source('/Users/duanshumeng/PGx_lab/HCC1395/Quartet_Multiomics_Ratio_Code/utils/theme_nature.r')
 
 # Load function: get_test_type_with_effectsize
-source("~/生物信息/PGx_lab/HCC1395/ElementVSIllumina/文章/Scripts/Visualization scripts/Statistics_analysis.R")
+source("~/Gx_lab/HCC1395/ElementVSIllumina/Scripts/Visualization scripts/Statistics_analysis.R")
 
 library(ggplot2)
 library(cowplot)
@@ -312,7 +312,7 @@ Fig.S1b.nist.indel.test <- get_test_type_with_effectsize(subset(nist.df.sub,Type
 
 #p_qq <- plot_all_qqplots(subset(nist.df.sub,Type=='SNV'))
 
-#ggsave(file='/Users/duanshumeng/生物信息/PGx_lab/HCC1395/ElementVSIllumina/文章/GB投稿/Reviewer_comments_reply/Figures/NIST.QQ_plot.pdf',p_qq,width = 8.15,height = 5.7)
+#ggsave(file='/Users/duanshumeng/PGx_lab/HCC1395/ElementVSIllumina/文章/GB投稿/Reviewer_comments_reply/Figures/NIST.QQ_plot.pdf',p_qq,width = 8.15,height = 5.7)
 
 # Example of function call:
 # tnseq.df.sub=nist.df.sub
@@ -458,7 +458,7 @@ subset(q.f1.sub,Depth=='25X') %>%
   )
 
 
-#ggsave(file='/Users/duanshumeng/生物信息/PGx_lab/HCC1395/ElementVSIllumina/文章/GB投稿/Reviewer_comments_reply/Figures/Quartet_QQ_plot.pdf',quartet_snv.QQ,width = 8.15,height = 5.7)
+#ggsave(file='/Users/duanshumeng/PGx_lab/HCC1395/ElementVSIllumina/文章/GB投稿/Reviewer_comments_reply/Figures/Quartet_QQ_plot.pdf',quartet_snv.QQ,width = 8.15,height = 5.7)
 
 # Genome-wide analysis --
 # ELE & ILM
@@ -1030,7 +1030,7 @@ df_hcc1395.sub.rmsk_count.indel <- get_rmsk_count_compare(subset(df_hcc1395.sub.
 
 
 # WES targeted capture region repetitive elements
-rep_df <- read.csv('/Users/duanshumeng/生物信息/PGx_lab/HCC1395/ElementVSIllumina/文章/Q40_repeat-information.csv')
+rep_df <- read.csv('/Users/duanshumeng/PGx_lab/HCC1395/ElementVSIllumina/文章/Q40_repeat-information.csv')
 colnames(rep_df)[1] <- 'Repeat type'
 rep_df.long <- melt(rep_df)
 colnames(rep_df.long) <- c('Repeat type','Lib','Region')
