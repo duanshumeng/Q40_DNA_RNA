@@ -6,7 +6,7 @@ library(scales)
 library(ggpubr)
 library(forcats)
 
-setwd('/Users/duanshumeng/生物信息/PGx_lab/HCC1395/ElementVSIllumina/文章/GB投稿/Reviewer_comments_reply/Figures')
+setwd('/Users/duanshumeng/PGx_lab/HCC1395/ElementVSIllumina/文章/GB投稿/Reviewer_comments_reply/Figures')
 # Create data frame
 seq_data <- data.frame(
   Application_scenarios = c("RNA-seq", "RNA-seq", 
